@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachillerato en Informática - Explora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variables de color */
+        :root {
+            --primary-blue: #00d2ff;
+            --dark-bg: #0a0e17;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --accent-green: #39ff14;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section con video de fondo (simulado con gradiente) */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(10, 14, 23, 0.7), rgba(10, 14, 23, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 14, 23, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .hero-content h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .btn-cta {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            background: transparent;
+            color: white;
+            border: 2px solid var(--accent-green);
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+        }
+
+        .btn-cta:hover {
+            background: var(--accent-green);
+            color: black;
+            box-shadow: 0 0 30px var(--accent-green);
+        }
+
+        /* Grid de secciones inferiores */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        /* Animación de entrada */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; } /* En móvil se usaría un menú hamburguesa */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">EXPLORA INFORMATICA</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#materias">Materias</a></li>
+            <li><a href="#talleres">Talleres</a></li>
+            <li><a href="#exito">Éxito</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content fade-in">
+            <h1>BACHILLERATO EN INFORMÁTICA</h1>
+            <p>TRANSFORMA EL FUTURO, LÍNEA POR LÍNEA.</p>
+            <button class="btn-cta">INICIA TU VIAJE DIGITAL</button>
+        </div>
+
+        <div class="features-grid fade-in">
+            <div class="card">
+                <h3>Nuestra Trayectoria</h3>
+                <p>Descubre cómo hemos evolucionado desde los primeros sistemas hasta la IA actual.</p>
+            </div>
+            <div class="card">
+                <h3>Áreas Técnicas</h3>
+                <p>Coding, Hardware, Redes y Ciberseguridad. Especialízate en lo que te apasiona.</p>
+            </div>
+            <div class="card">
+                <h3>Aprende Haciendo</h3>
+                <p>Laboratorios equipados con tecnología de vanguardia para tus proyectos.</p>
+            </div>
+            <div class="card">
+                <h3>Casos de Éxito</h3>
+                <p>"La base técnica que recibí aquí fue la clave para mi carrera en software."</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
